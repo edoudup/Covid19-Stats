@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les chiffres du COVID-19
+{% endblock %}
+
+{% block body %}
+	<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">Les chiffres du COVID-19 - {{ data.0.lib_dep }}
+		<p class="lead">Mise à jour le : {{data.0.date|date("d/m/Y")}}</p>
+	</div>
+
+	<div class="row text-center">
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header">
+					<h4 class="my-0 fw-normal">Nombre d’hospitalisations</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.hosp }}</h1>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header">
+					<h4 class="my-0 fw-normal">Nombre de personnes réa</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.rea }}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

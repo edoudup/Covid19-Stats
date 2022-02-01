@@ -18,9 +18,14 @@ class CallApiService
         return $this->getApi('france');
     }
 
-    public function getAllDataDepartment(): array
+    public function AllLiveData(): array
     {
         return $this->getApi('departements');
+    }
+
+    public function getDepartmentData($department): array
+    {
+        return $this->getApi('departement/' . $department);
     }
 
     private function getApi(string $var)
