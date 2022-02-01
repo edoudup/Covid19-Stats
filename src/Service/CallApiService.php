@@ -18,7 +18,7 @@ class CallApiService
         return $this->getApi('france');
     }
 
-    public function getAllDepartments(): array
+    public function getAllDataDepartment(): array
     {
         return $this->getApi('departements');
     }
