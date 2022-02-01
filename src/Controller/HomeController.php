@@ -16,7 +16,8 @@ class HomeController extends AbstractController
     {
         //dd($callApiService->getAllFranceData());
         return $this->render('home/index.html.twig', [
-            'data' => $callApiService->getAllFranceData(),
+            'data' => $callApiService->getFranceData(),
+            'departments' => $callApiService->getAllDepartments(),
         ]);
     }
 }
