@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     public function browse(CallApiService $callApiService): Response
     {
         //dd($callApiService->getFranceData());
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/browse.html.twig', [
             'data' => $callApiService->getFranceData(),
         ]);
     }

@@ -2,7 +2,6 @@
 
 namespace App\Service; 
 
-use DateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class CallApiService 
@@ -14,30 +13,23 @@ class CallApiService
         $this->client = $client;
     }
 
-    //data for France
+    //data for France 
     public function getFranceData(): array
     {
         return $this->getApi('live/france');
     }
 
-    //data for department 
+    //data for all department
     public function getAllData(): array
     {
         return $this->getApi('live/departements');
     }
 
-    //data by date 
-    public function getAllDataByDate($date): array
-    {
-        return $this->getApi('departements-by-date/' . $date);
-    }
-    
+    //data for one department
     public function getDepartmentData($department): array
     {
         return $this->getApi('departement/' . $department);
     }
-
-
     
     private function getApi(string $var)
     {
