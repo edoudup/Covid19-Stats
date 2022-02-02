@@ -2,6 +2,7 @@
 
 namespace App\Service; 
 
+use DateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class CallApiService 
@@ -13,30 +14,38 @@ class CallApiService
         $this->client = $client;
     }
 
+    //data for France
     public function getFranceData(): array
     {
-        return $this->getApi('france');
+        return $this->getApi('live/france');
     }
 
-    public function AllLiveData(): array
+    //data for department 
+    public function getAllData(): array
     {
-        return $this->getApi('departements');
+        return $this->getApi('live/departements');
     }
 
+    //data by date 
+    public function getAllDataByDate($date): array
+    {
+        return $this->getApi('departements-by-date/' . $date);
+    }
+    
     public function getDepartmentData($department): array
     {
         return $this->getApi('departement/' . $department);
     }
 
+
+    
     private function getApi(string $var)
     {
         $response = $this->client->request(
             'GET',
-            'https://coronavirusapifr.herokuapp.com/data/live/' . $var
+            'https://coronavirusapifr.herokuapp.com/data/' . $var
         );
+    return $response->toArray();
 
-        return $response->toArray();
     }
-
-    
 }
