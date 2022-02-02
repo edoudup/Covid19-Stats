@@ -4,15 +4,9 @@
 {% endblock %}
 
 {% block body %}
-	<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">Les chiffres du COVID-19 - {{ data.0.lib_dep }}
-		<p class="lead">Mise à jour le : {{data.0.date|date("d/m/Y")}}</p>
-	</div>
-
-	<div class="card mb-5 shadow-lg">
-		<div class="card-body">
-			 {{ render_chart(chart)}}
-		</div>
+	<div>
+		<h1 class="mt-4 mb-2">Les chiffres du COVID - {{ data.0.lib_dep }}</h1>
+		<h5 class="mb-3">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h5>
 	</div>
 
 	<div class="row text-center">
@@ -29,7 +23,7 @@
 		<div class="col">
 			<div class="card mb-4 shadow-sm mt-4">
 				<div class="card-header">
-					<h4 class="my-0 fw-normal">Nombre de personnes réa</h4>
+					<h4 class="my-0 fw-normal">Nombre de personnes en réanimation</h4>
 				</div>
 				<div class="card-body">
 					<h1 class="card-title pricing-card-title">{{ data.0.rea }}</h1>

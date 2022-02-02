@@ -12,12 +12,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index(CallApiService $callApiService): Response
+    public function browse(CallApiService $callApiService): Response
     {
         //dd($callApiService->getFranceData());
         return $this->render('home/index.html.twig', [
             'data' => $callApiService->getFranceData(),
-            'departments' => $callApiService->getAllData(),
         ]);
     }
 }
