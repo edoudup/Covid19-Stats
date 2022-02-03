@@ -16,13 +16,13 @@ class CallApiService
     //data for France 
     public function getFranceData(): array
     {
-        return $this->getApi('live/france');
+        return $this->getApi('france');
     }
 
     //data for all department
     public function getAllData(): array
     {
-        return $this->getApi('live/departements');
+        return $this->getApi('departements');
     }
 
     //data for one department
@@ -35,7 +35,7 @@ class CallApiService
     {
         $response = $this->client->request(
             'GET',
-            'https://coronavirusapifr.herokuapp.com/data/' . $var
+            'https://coronavirusapifr.herokuapp.com/data/live/' . $var
         );
     return $response->toArray();
 

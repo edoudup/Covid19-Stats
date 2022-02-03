@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les chiffres du COVID-19
+{% block title %}Les chiffres du COVID-19 par département
 {% endblock %}
 
 {% block body %}
 	<div>
 		<h1 class="mt-4 mb-2">Les chiffres du COVID - {{ data.0.lib_dep }}</h1>
-		<h5 class="mb-3">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h5>
+		<h6 class="mb-3">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h6>
 	</div>
 
 	<div class="row text-center">

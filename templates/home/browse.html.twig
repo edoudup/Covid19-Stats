@@ -4,51 +4,70 @@
 {% endblock %}
 
 {% block body %}
-	<div>
-		<h1 class="mt-4 mb-2">Les chiffres du COVID-19 en France</h1>
-		<h5 class="mb-3">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h5>
-	</div>
 
+	<div>
+		<h1 class="title">Les chiffres du COVID-19 en France</h1>
+		<h6 class="subtitle">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h6>
+	</div>
 	<div class="album mt-5">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
 			<div class="col">
 				<div class="card shadow-sm">
 					<div class="card-body">
 						<h5 class="card-title">Nombre de cas positifs</h5>
-						<p class="card-text">Nombre de cas positifs au cours des dernières 24h<br></p>
+						<p class="card-text">Nombre de cas déclarés positifs au cours des dernières 24h<br></p>
 					</div>
 					<h3 class="card-footer bg-secondary text-light text-grey mx-2 rounded-pill">{{data.0.conf_j1}}</h3>
 				</div>
 			</div>
-
+			
 			<div class="col">
 				<div class="card shadow-sm h-100">
 					<div class="card-body">
-						<h5 class="card-title">Nombre d’hospitalisations</h5>
-						<p class="card-text">Nombre de personnes actuellement hospitalisée</p>
+						<h5 class="card-title">Nombre d’hospitalisations 24h</h5>
+						<p class="card-text">Nombre de personnes hospitalisée au cours des dernières 24h</p>
 					</div>
-					<h3 class="card-footer bg-warning text-dark mx-2 rounded-pill">{{data.0.hosp}}</h3>
+					<h3 class="card-footer bg-warning text-light mx-2 rounded-pill">{{data.0.incid_hosp}}</h3>
 				</div>
 			</div>
 
 			<div class="col">
 				<div class="card shadow-sm">
 					<div class="card-body">
-						<h5 class="card-title">Nombre de Réa</h5>
-						<p class="card-text">Nombre de personnes actuellement en réanimation</p>
+						<h5 class="card-title">Nombre total hospitalisation</h5>
+						<p class="card-text">Nombre total de personnes actuellement hospitalisée</p>
 					</div>
-					<h3 class="card-footer bg-warning text-dark mx-2 rounded-pill">{{data.0.rea}}</h3>
+					<h3 class="card-footer bg-warning text-light mx-2 rounded-pill">{{data.0.hosp}}</h3>
 				</div>
 			</div>
 
 			<div class="col">
 				<div class="card shadow-sm">
 					<div class="card-body">
-						<h5 class="card-title">Nombre de patients décédés</h5>
-						<p class="card-text">Nouveaux patients décédés à l’hôpital au cours des dernières 24h</p>
+						<h5 class="card-title">Nombre de personne en réanimation 24h</h5>
+						<p class="card-text">Nouveaux de patients admis en réanimation au cours des dernières 24h</p>
 					</div>
-					<h3 class="card-footer bg-info text-dark mx-2 rounded-pill">{{data.0.incid_dchosp}}</h3>
+					<h3 class="card-footer bg-info text-light mx-2 rounded-pill">{{data.0.incid_rea}}</h3>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card shadow-sm">
+					<div class="card-body">
+						<h5 class="card-title">Nombre total réanimation</h5>
+						<p class="card-text">Nombre total de personnes actuellement en réanimation</p>
+					</div>
+					<h3 class="card-footer bg-info text-light mx-2 rounded-pill">{{data.0.rea}}</h3>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card shadow-sm">
+					<div class="card-body">
+						<h5 class="card-title">Nombre de décès 24h</h5>
+						<p class="card-text">Nombre de personnes décédés au cours des dernières 24h</p>
+					</div>
+					<h3 class="card-footer bg-dark text-light mx-2 rounded-pill">{{data.0.incid_dchosp}}</h3>
 				</div>
 			</div>
 
@@ -65,6 +84,16 @@
 			<div class="col">
 				<div class="card shadow-sm">
 					<div class="card-body">
+						<h5 class="card-title">Nombre totale de guéris 24h</h5>
+						<p class="card-text">Nombre de personnes guéris au cours des dernières 24h</p>
+					</div>
+					<h3 class="card-footer bg-success text-light mx-2 rounded-pill">{{data.0.incid_rad}}</h3>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card shadow-sm">
+					<div class="card-body">
 						<h5 class="card-title">Nombre totale de guéris</h5>
 						<p class="card-text">Nombre de personnes guéris depuis le début de la pandémie</p>
 					</div>
@@ -73,5 +102,4 @@
 			</div>
 		</div>
 	</div>
-
 {% endblock %}

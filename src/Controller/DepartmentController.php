@@ -28,7 +28,9 @@ class DepartmentController extends AbstractController
     {
         //dd($callApiService->getDepartmentData());
         return $this->render('departement/read.html.twig', [
+            'data' => $callApiService->getFranceData(),
             'data' => $callApiService->getDepartmentData($department),
+
         ]);
     }
 }
