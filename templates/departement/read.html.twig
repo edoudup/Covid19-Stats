@@ -5,15 +5,26 @@
 
 {% block body %}
 	<div>
-		<h1 class="mt-4 mb-2">Les chiffres du COVID - {{ data.0.lib_dep }}</h1>
-		<h6 class="mb-3">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h6>
+		<h1 class="title">Les chiffres du COVID - {{ data.0.lib_dep }}</h1>
+		<h6 class="title-region">{{ data.0.lib_reg }}</h6>
+		<h6 class="subtitle">Mise à jour le : {{data.0.date|date("d/m/Y")}}</h6>
 	</div>
 
-	<div class="row text-center">
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md- g-">
 		<div class="col">
 			<div class="card mb-4 shadow-sm mt-4">
-				<div class="card-header">
-					<h4 class="my-0 fw-normal">Nombre d’hospitalisations</h4>
+				<div class="card-header bg-warning text-light">
+					<h4 class="my-0 fw-normal">Nombre d’hospitalisation - 24h</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.incid_hosp }}</h1>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header bg-warning text-light ">
+					<h4 class="my-0 fw-normal">Nombre total de personne hospitalisation</h4>
 				</div>
 				<div class="card-body">
 					<h1 class="card-title pricing-card-title">{{ data.0.hosp }}</h1>
@@ -22,7 +33,17 @@
 		</div>
 		<div class="col">
 			<div class="card mb-4 shadow-sm mt-4">
-				<div class="card-header">
+				<div class="card-header bg-info text-light">
+					<h4 class="my-0 fw-normal">Nombre de personne en réanimation 24h</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.incid_rea }}</h1>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header bg-info text-light ">
 					<h4 class="my-0 fw-normal">Nombre de personnes en réanimation</h4>
 				</div>
 				<div class="card-body">
@@ -30,5 +51,29 @@
 				</div>
 			</div>
 		</div>
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header bg-dark text-light">
+					<h4 class="my-0 fw-normal">Nombre de décès 24h</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.incid_dchosp }}</h1>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card mb-4 shadow-sm mt-4">
+				<div class="card-header bg-success text-light">
+					<h4 class="my-0 fw-normal">Nombre totale de guéris 24h</h4>
+				</div>
+				<div class="card-body">
+					<h1 class="card-title pricing-card-title">{{ data.0.incid_rad }}</h1>
+				</div>
+			</div>
+		</div>
+	
+		
+	
+		
 	</div>
 {% endblock %}
