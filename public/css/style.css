@@ -19,17 +19,22 @@
     color: #6C757D ;
 }
 
+.navbar_info-item,
+.navbar_link-item{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
 .navbar_info-item{
     padding-left: 1rem;
-    font-size: 1.5rem;
 }
 .navbar_link-item{
     padding-left: 2rem;
-    text-decoration: none;
-    font-size: 1.5rem;
 }
 
-.navbar_link-item:hover{
+.navbar_info-item:hover,
+.navbar_link-item:hover
+{
     color: #d3d3d3;
 }
 
