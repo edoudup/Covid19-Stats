@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les chiffres du COVID-19 par département
+{% block title %}Les chiffres du COVID - {{ data.0.lib_dep }}
 {% endblock %}
 
 {% block body %}
@@ -31,5 +31,4 @@
 			</div>
 		</div>
 	</div>
-
 {% endblock %}
